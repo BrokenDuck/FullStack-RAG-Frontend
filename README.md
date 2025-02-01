@@ -1,8 +1,10 @@
-![reactjs-vite-tailwindcss-boilerplate](https://user-images.githubusercontent.com/16243531/217138979-b854309c-4742-4275-a705-f9fec5158217.jpg)
+# FullStack RAG Frontend
 
-# React Tailwindcss Boilerplate build with Vite
-
-This is a boilerplate build with Vite, React 18, TypeScript, Vitest, Testing Library, TailwindCSS 3, Eslint and Prettier.
+This is a basic frontend for the RAG application. The main functionalities are:
+- A chat with the uploaded documents with fully implemented api streaming using [Event Sources](https://developer.mozilla.org/en-US/docs/Web/API/EventSource).
+- Displaying document extracts to ground the answer
+- Selecting between fast answers and accuracte answers with the `think deeper` button
+- An interface to upload multiple pdfs to the backend that will be parsed and chunked
 
 ## What is inside?
 
@@ -10,6 +12,7 @@ This project uses many tools like:
 
 - [Vite](https://vitejs.dev)
 - [ReactJS](https://reactjs.org)
+- [ReactRouter](https://reactrouter.com/)
 - [TypeScript](https://www.typescriptlang.org)
 - [Vitest](https://vitest.dev)
 - [Testing Library](https://testing-library.com)
@@ -19,62 +22,37 @@ This project uses many tools like:
 
 ## Getting Started
 
-### Install
+### Requirements
 
-Create the project.
+You will need to have `nodejs>=20` (LTS) installed.
 
+### Running the website locally
+
+Start by enabling corepack and installing the packages:
 ```bash
-pnpm dlx degit joaopaulomoraes/reactjs-vite-tailwindcss-boilerplate my-app
+corepack enable
+yarn
 ```
 
-Access the project directory.
+(Optional) If you are using VSCode, the editor might start complaining it cannot find any of the modules, then
+1. Make sure you have the `ZipFS` extension installed
+2. Run `yarn dlx @yarnpkg/sdks vscode`
+3. Change your typescript version to the 'Workspace version'
 
+To view the website locally:
 ```bash
-cd my-app
+yarn build
+yarn serve
 ```
 
-Install dependencies.
+### Developping the website
 
+To run the development server run:
 ```bash
-pnpm install
+yarn dev
 ```
 
-Serve with hot reload at <http://localhost:5173>.
-
+To run the tests:
 ```bash
-pnpm run dev
+yarn test
 ```
-
-### Lint
-
-```bash
-pnpm run lint
-```
-
-### Typecheck
-
-```bash
-pnpm run typecheck
-```
-
-### Build
-
-```bash
-pnpm run build
-```
-
-### Test
-
-```bash
-pnpm run test
-```
-
-View and interact with your tests via UI.
-
-```bash
-pnpm run test:ui
-```
-
-## License
-
-This project is licensed under the MIT License.

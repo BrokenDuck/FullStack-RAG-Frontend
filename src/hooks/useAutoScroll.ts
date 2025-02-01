@@ -2,10 +2,10 @@ import { useEffect, useLayoutEffect, useRef } from 'react'
 
 const SCROLL_THRESHOLD = 10
 
-function useAutoScroll(active) {
+function useAutoScroll(active: boolean | undefined) {
   const scrollContentRef = useRef(null)
   const isDisabled = useRef(false)
-  const prevScrollTop = useRef(null)
+  const prevScrollTop = useRef<number>(0)
 
   useEffect(() => {
     const resizeObserver = new ResizeObserver(() => {
